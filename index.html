@@ -3,100 +3,277 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Léo Chouarbi</title>
+    <title>Léo Chouarbi — Portfolio</title>
+    <meta name="description" content="Portfolio cybersécurité de Léo Chouarbi, ingénieur, manager, passionné de projets, radio, finance.">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/OOjs_UI_icon_shield-constructive.svg/2048px-OOjs_UI_icon_shield-constructive.svg.png">
 </head>
 <body>
     <header>
-        <h1>Léo Chouarbi</h1>
+        <div class="cyber-header">
+            <h1>Léo Chouarbi</h1>
+            <span class="cyber-title">Ingénieur cybersécurité · Passionné de management, informatique, gestion de projets, radio et finance</span>
+        </div>
         <nav>
             <a href="#about">À propos</a>
             <a href="#certifications">Certifications</a>
             <a href="#skills">Compétences</a>
-            <a href="#trophees">Trophées</a>
+            <a href="#projects">Projets / Trophées</a>
+            <a href="#todo">To-Do List</a>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
 
+    <!-- Résumé code C -->
+    <section id="resume-c">
+        <pre>
+<span style="color:#79c0ff;">struct</span> LeoChouarbi {
+    <span style="color:#ffa657;">char</span> *diplome = "Ingénieur cybersécurité (ESIEA, 5 ans)";
+    <span style="color:#ffa657;">char</span> *specialites[] = {"Management", "Projets techniques", "Radio", "Finance", "DevOps"};
+    <span style="color:#ffa657;">char</span> *passions[] = {"Automatisation", "Gestion Agile", "Sécurité Offensive", "Musique", "Radio"};
+    <span style="color:#ffa657;">int</span> TOIEC = 830;
+    <span style="color:#ffa657;">bool</span> cherche_opportunites = true;
+};
+        </pre>
+    </section>
+
     <section id="about">
-        <h2>À propos de moi</h2>
+        <h2>À propos</h2>
         <p>
-            Étudiant ingénieur en cybersécurité à [Ton École]. Passionné par l’automatisation, la sécurité offensive, l’IA et la finance. <br>
-            Niveau scolaire : Bac+5 (spécialité SSI)<br>
-            <br>
-            [Tu peux étoffer cette section selon ton parcours.]
+            Diplômé ingénieur de l’ESIEA (spécialité cybersécurité). Passionné par le management, la gestion de projets techniques (méthode agile), l’informatique, la radio et la finance.<br>
+            J’apprécie particulièrement les projets personnels d’automatisation, la sécurité offensive, et le développement de solutions créatives.<br>
+            Je termine actuellement mon cursus d’ingénieur (Bac+5), ouvert à de nouveaux défis !
         </p>
     </section>
 
     <section id="certifications">
         <h2>Certifications</h2>
         <div class="cards-container">
-            <!-- Carte 1 -->
+            <!-- Carte CCNA -->
             <div class="cert-card">
                 <div class="card-inner">
                     <div class="card-front shiny">
-                        <img src="assets/certif1.png" alt="Certification 1">
-                        <h3>CompTIA Security+</h3>
+                        <img src="assets/ccna.png" alt="CCNA">
+                        <h3>Cisco CCNA</h3>
                     </div>
                     <div class="card-back">
-                        <p>Certification sécurité de base mondialement reconnue.<br>
-                        Axe : Threats, risks, cryptographie...</p>
+                        <p>Certificat Cisco Certified Network Associate : <br>fondamentaux réseaux, routage, sécurité, switching.</p>
                     </div>
                 </div>
             </div>
-            <!-- Carte 2 -->
+            <!-- Carte CSNA StormShield -->
             <div class="cert-card">
                 <div class="card-inner">
                     <div class="card-front shiny">
-                        <img src="assets/certif2.png" alt="Certification 2">
-                        <h3>PECB ISO 27001</h3>
+                        <img src="assets/stormshield.png" alt="CSNA StormShield">
+                        <h3>CSNA StormShield</h3>
                     </div>
                     <div class="card-back">
-                        <p>Maîtrise du management de la sécurité de l’information selon la norme ISO 27001.</p>
+                        <p>Certified Stormshield Network Administrator : <br>administration et sécurité des firewalls StormShield.</p>
                     </div>
                 </div>
             </div>
-            <!-- Ajoute d'autres cartes de la même façon -->
+            <!-- Carte EBIOS-RM -->
+            <div class="cert-card">
+                <div class="card-inner">
+                    <div class="card-front shiny">
+                        <img src="assets/ebios.png" alt="EBIOS-RM">
+                        <h3>EBIOS-RM (ANSSI / All4Tech)</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>EBIOS Risk Manager : <br>méthodologie française d’analyse et gestion des risques cyber.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Carte Wallix WCA-PAM -->
+            <div class="cert-card">
+                <div class="card-inner">
+                    <div class="card-front shiny">
+                        <img src="assets/wallix.png" alt="Wallix WCA-PAM">
+                        <h3>WCA-PAM Wallix</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>Wallix Certified Administrator – Privileged Access Management (PAM), gestion sécurisée des accès privilégiés.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Carte TOEIC -->
+            <div class="cert-card">
+                <div class="card-inner">
+                    <div class="card-front shiny">
+                        <img src="assets/toeic.png" alt="TOEIC">
+                        <h3>TOEIC 830</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>Test officiel d’anglais professionnel. Score : 830.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Carte TryHackMe JPT -->
+            <div class="cert-card">
+                <div class="card-inner">
+                    <div class="card-front shiny">
+                        <img src="assets/tryhackme.png" alt="TryHackMe JPT">
+                        <h3>TryHackMe JPT</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>Junior Penetration Tester. Challenge CTF, labos pratiques sur l’offensif, reconnaissance et exploitation.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Carte WebFundamentals -->
+            <div class="cert-card">
+                <div class="card-inner">
+                    <div class="card-front shiny">
+                        <img src="assets/web.png" alt="Web Fundamentals">
+                        <h3>Web Fundamentals</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>Maîtrise des bases du web (HTML, CSS, sécurité, OWASP, déploiement, best-practices).</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Carte SOC L1 -->
+            <div class="cert-card">
+                <div class="card-inner">
+                    <div class="card-front shiny">
+                        <img src="assets/soc.png" alt="SOC Level 1">
+                        <h3>SOC Level 1</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>Formation Analyste SOC L1 : supervision, analyse d’incidents, réponse aux alertes.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Carte Google Cloud Fundamentals -->
+            <div class="cert-card">
+                <div class="card-inner">
+                    <div class="card-front shiny">
+                        <img src="assets/googlecloud.png" alt="Google Cloud Fundamentals">
+                        <h3>Google Cloud Fundamentals</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>Principes du cloud computing et services Google Cloud.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Carte AWS Cloud Fundamentals -->
+            <div class="cert-card">
+                <div class="card-inner">
+                    <div class="card-front shiny">
+                        <img src="assets/aws.png" alt="AWS Cloud Fundamentals">
+                        <h3>AWS Cloud Fundamentals</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>Fondamentaux du cloud Amazon AWS, déploiement et sécurité.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Carte AWS Security -->
+            <div class="cert-card">
+                <div class="card-inner">
+                    <div class="card-front shiny">
+                        <img src="assets/awssecurity.png" alt="AWS Security Cloud">
+                        <h3>AWS Security Cloud</h3>
+                    </div>
+                    <div class="card-back">
+                        <p>Spécialisation sécurité cloud Amazon AWS.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <section id="skills">
         <h2>Compétences</h2>
         <ul class="tree">
-            <li>Langages de programmation
+            <li class="has-children">Langages de programmation
                 <ul>
                     <li>Python</li>
                     <li>Bash</li>
+                    <li>C, C++</li>
+                    <li>PHP</li>
                     <li>JavaScript</li>
-                    <li>SQL</li>
+                    <li>SQL (PostgreSQL, MySQL)</li>
+                    <li>YAML</li>
+                    <li>HTML, CSS</li>
                 </ul>
             </li>
-            <li>Cybersécurité
+            <li class="has-children">Cybersécurité
                 <ul>
-                    <li>Pentest / CTF</li>
-                    <li>ELK / SIEM</li>
+                    <li>Pentest</li>
+                    <li>CTF</li>
+                    <li>EBIOS Risk Manager</li>
+                    <li>Réseaux (CCNA)</li>
+                    <li>Gestion des accès privilégiés (PAM, Wallix)</li>
+                    <li>SIEM (ELK Stack, Splunk)</li>
+                    <li>Analyse de logs & supervision (SOC)</li>
+                    <li>Firewall Stormshield, UTM</li>
+                    <li>Cloud Security (AWS, GCP)</li>
+                    <li>Sensibilisation et conformité RGPD</li>
+                    <li>OWASP Top 10, sécurité web</li>
+                </ul>
+            </li>
+            <li class="has-children">DevOps & Automatisation
+                <ul>
+                    <li>Docker, containers</li>
+                    <li>Ansible</li>
+                    <li>Git, GitHub</li>
+                    <li>CI/CD</li>
+                    <li>WSL / Linux avancé</li>
                     <li>Automatisation d’audits</li>
                 </ul>
             </li>
-            <li>DevOps & Cloud
+            <li class="has-children">Autres
                 <ul>
-                    <li>Docker, WSL, Ansible</li>
+                    <li>Gestion de projets (méthode agile, scrum, kanban)</li>
+                    <li>Radio & musique (animation, technique, organisation)</li>
+                    <li>Finance (investissement, veille, automatisation financière)</li>
+                    <li>Communication technique</li>
+                    <li>Veille cybersécurité</li>
                 </ul>
             </li>
-            <!-- Ajoute d'autres branches si besoin -->
         </ul>
     </section>
 
-    <section id="trophees">
-        <h2>Trophées / Réalisations</h2>
+    <section id="projects">
+        <h2>Projets / Trophées</h2>
         <ul class="trophees-list">
-            <li>Podium CTF X 2024</li>
-            <li>Classement top 1% TryHackMe</li>
-            <li>[Ajoute ce que tu veux, Hackathons, etc]</li>
+            <li>Stage cybersécurité — sécurité opérationnelle (SOC, SIEM, audit de configurations)</li>
+            <li>Automatisation complète d’audit PostgreSQL et Apache (bash & Python)</li>
+            <li>Participation régulière à des CTFs et challenges cybersécurité</li>
+            <li>Projet radio bénévole : responsable technique et animation émission</li>
+            <li>Classement “Jr Penetration Tester” sur TryHackMe</li>
+            <li>Création d’un pipeline de génération vidéo TikTok par IA</li>
+            <li>Rédaction de documentation technique & sensibilisation SSI</li>
         </ul>
+    </section>
+
+    <section id="todo">
+        <h2>To-Do / Objectifs à venir</h2>
+        <ul class="todo-list">
+            <li>Certification ISO 27001 Lead Implementer (prévue)</li>
+            <li>Certification CompTIA PenTest+ (prévue)</li>
+            <li>CISSP / CISM (à étudier après expérience pro)</li>
+            <li>Contribuer à un projet open-source de cybersécurité</li>
+            <li>Réaliser une conférence ou un talk sécurité</li>
+        </ul>
+        <div class="todo-postit">À suivre…</div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <div class="contact-block">
+            <p>Mail pro : <a href="mailto:leo.votrepro@gmail.com">leo.votrepro@gmail.com</a></p>
+            <p>LinkedIn : <a href="https://linkedin.com/in/leo-chouarbi" target="_blank">linkedin.com/in/leo-chouarbi</a></p>
+            <p>GitHub : <a href="https://github.com/leoje01" target="_blank">github.com/leoje01</a></p>
+            <!-- Ajoute ou modifie tes liens ici -->
+        </div>
     </section>
 
     <footer>
-        &copy; 2025 Léo Chouarbi
+        &copy; 2025 Léo Chouarbi &nbsp;|&nbsp; Portfolio cybersécurité
     </footer>
     <script src="script.js"></script>
 </body>
