@@ -1,0 +1,121 @@
+.shiny-card-wrapper {
+  perspective: 1000px;
+  width: 260px;
+  height: 360px;
+  margin: 1rem;
+}
+
+.shiny-card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.4s ease;
+  cursor: pointer;
+}
+
+.shiny-card.flipped {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 1rem;
+  background: linear-gradient(
+    135deg,
+    rgba(70, 0, 130, 0.9),
+    rgba(0, 0, 80, 0.9),
+    rgba(0, 20, 40, 0.9)
+  );
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow:
+    0 0 10px rgba(255, 255, 255, 0.05),
+    inset 0 0 12px rgba(255, 255, 255, 0.05);
+  color: white;
+  overflow: hidden;
+  transform: rotateY(0deg);
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  background: linear-gradient(
+    135deg,
+    rgba(70, 0, 130, 0.9),
+    rgba(0, 0, 80, 0.9),
+    rgba(0, 20, 40, 0.9)
+  );
+  backface-visibility: hidden;
+}
+
+.card-face h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  z-index: 2;
+}
+
+.card-face p {
+  font-size: 1rem;
+  opacity: 0.9;
+  z-index: 2;
+}
+
+/* HOLOGRAPHIC EFFECT */
+.holo-overlay {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.04),
+    rgba(0, 255, 255, 0.12),
+    rgba(255, 0, 255, 0.12),
+    rgba(0, 0, 0, 0)
+  );
+  mix-blend-mode: screen;
+  opacity: 0;
+  transition: transform 0.2s ease-out, opacity 0.2s ease-out;
+  z-index: 0;
+  filter: blur(1px);
+  background-size: 200% 200%;
+  animation: holoShift 6s linear infinite;
+}
+
+.shiny-card:hover .holo-overlay {
+  opacity: 0.6;
+}
+
+@keyframes holoShift {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+/* BADGE "En cours" */
+.progress-badge {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.2);
+  pointer-events: none;
+}
