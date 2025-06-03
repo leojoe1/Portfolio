@@ -6,12 +6,6 @@ import ExperienceAndContact from "../components/ExperienceAndContact";
 
 const certifications = [
   {
-    frontTitle: "ISO 27001",
-    frontText: "Certifié en sécurité de l'information.",
-    backTitle: "Obtenue",
-    backText: "Mai 2025",
-  },
-  {
     frontTitle: "AWS CCP",
     frontText: "Cloud Amazon Web Services.",
     backTitle: "Obtenue",
@@ -25,7 +19,7 @@ const certifications = [
   },
   {
     frontTitle: "Ebios RM (ANSSI)",
-    frontText: "Méthodologie d’analyse de risques.",
+    frontText: "Méthodologie d’analyse de risques.ISO 27005",
     backTitle: "Obtenue",
     backText: "Janvier 2025",
   },
@@ -43,7 +37,7 @@ const certifications = [
   },
   {
     frontTitle: "TryHackMe Jr PenTester",
-    frontText: "Formation en test d'intrusion.",
+    frontText: "Formation en test d'intrusion.\nTryHackme TOP 2% : 16500 points",
     backTitle: "Obtenue",
     backText: "Octobre 2023",
   },
@@ -80,7 +74,8 @@ const Home = () => {
   return (
     <div className="px-6 py-10 w-full max-w-screen-2xl mx-auto">
       <section id="hero" className="text-center text-white mb-10 w-full">
-        <h1 className="text-3xl font-bold">Bienvenue sur mon portfolio interactif ✨</h1>
+        <h1 className="text-3xl font-bold">Bienvenue sur mon Portfolio, bonne découverte </h1>
+        <h3>Léo Chouarbi</h3>
         <Link
           to="/constellation"
           className="mt-4 inline-block rounded bg-cyan-500 px-4 py-2 text-white hover:bg-cyan-600"

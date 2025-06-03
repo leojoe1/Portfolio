@@ -1,4 +1,3 @@
-// src/components/ExperienceAndContact.jsx
 import React from "react";
 
 const experiences = [
@@ -6,15 +5,25 @@ const experiences = [
     title: "Stagiaire en cybersécurité",
     company: "CS Group / Sopra Steria",
     duration: "6 mois - 2025",
-    description:
-      "Au sein de l’équipe Sécurité des Systèmes d’Information (SSI), je participe activement à la protection et à l’amélioration du niveau de sécurité de l’organisation. Mes missions couvrent la veille de sécurité (cyberwatch) pour détecter les vulnérabilités et menaces émergentes, la formulation de recommandations adaptées pour renforcer la sécurité des systèmes, la mise en œuvre de mesures de hardening afin de réduire la surface d’attaque, ainsi que la réalisation d’audits automatisés pour identifier et corriger les failles potentielles. J’interviens également dans la rédaction de rapports, la gestion des incidents et la sensibilisation des équipes, contribuant ainsi à la résilience et à la conformité globale du système d’information.",
+    description: [
+      "Veille en cybersécurité (Cyberwatch)",
+      "Recommandations sécurité",
+      "Mesures de hardening",
+      "Audits automatisés",
+      "Rapports et gestion d’incidents",
+      "Sensibilisation des équipes",
+    ],
   },
   {
-    title: "Responsable de la Supervision",
+    title: "Responsable de la supervision",
     company: "Thales SIX GTS",
     duration: "5 mois - 2024",
-    description:
-      "J'ai effectué un stage de fin d’études chez Thales SIX GTS, au sein d’un projet de grande envergure dans le domaine des télécommunications. Intégré à une équipe d'une vingtaine de personnes, ma mission était d'effectuer la supervision de l'ensemble des machines et équipements de la plateforme à travers Hawk dans un premier temps puis Grafana. Ce stage m’a offert une précieuse opportunité de travailler dans une équipe nombreuse et de comprendre les méthodes d’organisation et de management nécessaires pour des projets de cette envergure. J’ai également développé des compétences nouvelles en gestion des infrastructures réseau.",
+    description: [
+      "Supervision avec Hawk/Grafana",
+      "Équipe de 20 personnes",
+      "Gestion des infrastructures réseau",
+      "Organisation et management",
+    ],
   },
 ];
 
@@ -30,8 +39,14 @@ const ExperienceAndContact = () => {
               className="bg-gray-800 p-6 rounded-xl shadow-md hover:shadow-cyan-500/40 transition duration-300"
             >
               <h3 className="text-xl font-semibold">{exp.title}</h3>
-              <p className="text-sm text-cyan-400">{exp.company} – {exp.duration}</p>
-              <p className="mt-2 text-sm">{exp.description}</p>
+              <p className="text-sm text-cyan-400">
+                {exp.company} – {exp.duration}
+              </p>
+              <ul className="grid grid-cols-1 md:grid-cols-3 gap-3 mt-4 list-disc list-inside text-sm">
+                {exp.description.map((desc, i) => (
+                  <li key={i}>{desc}</li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>
@@ -41,12 +56,13 @@ const ExperienceAndContact = () => {
         <h2 className="text-3xl font-bold mb-4">Contact & CV</h2>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
-            href="/CV_Leo_Chouarbi.pdf"
-            download
-            className="bg-cyan-500 hover:bg-cyan-600 text-white px-6 py-2 rounded-full shadow-md"
-          >
-            Télécharger mon CV
-          </a>
+  href="/portfolio/CV_Leo_Chouarbi.pdf"
+  download="CV_Leo_Chouarbi.pdf"
+  className="bg-cyan-500 hover:bg-cyan-600 text-white px-6 py-2 rounded-full shadow-md"
+>
+  Télécharger mon CV
+</a>
+
           <a
             href="https://www.linkedin.com/in/leo-chouarbi"
             target="_blank"
@@ -56,7 +72,7 @@ const ExperienceAndContact = () => {
             LinkedIn
           </a>
           <a
-            href="mailto:leo.chouarbi@example.com"
+            href="mailto:chouarbi@et.esiea.fr"
             className="bg-gray-700 hover:bg-gray-800 text-white px-6 py-2 rounded-full shadow-md"
           >
             Me contacter

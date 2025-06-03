@@ -3,9 +3,27 @@ import "./ShinyCard.css";
 
 const ShinyCard = ({ frontTitle, frontText, backTitle, backText, inProgress }) => {
   const [isFlipped, setIsFlipped] = useState(false);
+  const isHovered = useRef(false); // ← ref au lieu d’un state
   const cardRef = useRef();
 
-  const handleCardClick = () => setIsFlipped(!isFlipped);
+  const handleClick = () => {
+    setIsFlipped(true);
+  };
+
+  const handleMouseEnter = () => {
+    isHovered.current = true;
+  };
+
+  const handleMouseLeave = () => {
+    isHovered.current = false;
+
+    // Replier la carte si la souris est bien sortie
+    setTimeout(() => {
+      if (!isHovered.current) {
+        setIsFlipped(false);
+      }
+    }, 300); // délai à ajuster
+  };
 
   const handleMouseMove = (e) => {
     const card = cardRef.current;
@@ -18,9 +36,8 @@ const ShinyCard = ({ frontTitle, frontText, backTitle, backText, inProgress }) =
     const rotateY = (x - centerX) / 10;
 
     card.style.transform = `
-      rotateY(${isFlipped ? 180 : 0}deg)
       rotateX(${rotateX}deg)
-      rotateY(${rotateY}deg)
+      rotateY(${isFlipped ? 180 : rotateY}deg)
     `;
 
     const holo = card.querySelector(".holo-overlay");
@@ -30,22 +47,15 @@ const ShinyCard = ({ frontTitle, frontText, backTitle, backText, inProgress }) =
     }
   };
 
-  const handleMouseLeave = () => {
-    const card = cardRef.current;
-    card.style.transform = `rotateY(${isFlipped ? 180 : 0}deg) rotateX(0deg) rotateY(0deg)`;
-
-    const holo = card.querySelector(".holo-overlay");
-    if (holo) holo.style.transform = "rotate(0deg)";
-  };
-
   return (
     <div className="shiny-card-wrapper">
       <div
         ref={cardRef}
         className={`shiny-card ${isFlipped ? "flipped" : ""}`}
-        onClick={handleCardClick}
-        onMouseMove={handleMouseMove}
+        onClick={handleClick}
+        onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
+        onMouseMove={handleMouseMove}
       >
         <div className="card-face card-front">
           <div className="holo-overlay" />

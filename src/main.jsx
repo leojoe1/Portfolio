@@ -6,7 +6,7 @@ import ProjectsConstellation from "./pages/ProjectsConstellation";
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <BrowserRouter>
+  <BrowserRouter basename="/Portfolio">
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/constellation" element={<ProjectsConstellation />} />
